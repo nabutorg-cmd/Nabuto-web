@@ -1,10 +1,17 @@
-NABUTO PREMIUM V2 YÜKLEME
+NABUTO KURUMSAL V3 — ÇOK SAYFALI SİTE
 
-1. ZIP dosyasını bilgisayarında ayıkla.
-2. İçindeki index.html, styles.css, script.js, vercel.json ve assets klasörünü seç.
-3. GitHub > Nabuto-web deposuna gir.
-4. Add file > Upload files seçeneğini aç.
-5. Bu dosyaları yükle ve Commit changes düğmesine bas.
-6. Vercel birkaç dakika içinde siteyi günceller.
+Bu sürümde yeni sayfalar vardır:
+- index.html
+- hakkimizda.html
+- projeler.html
+- nabutofest.html
+- iletisim.html
 
-ZIP dosyasını değil, ZIP içindeki dosyaları yüklemelisin.
+YÜKLEME:
+1. ZIP dosyasını açın.
+2. İçindeki tüm dosyaları ve assets klasörünü seçin.
+3. GitHub > Nabuto-web > Add file > Upload files yolunu açın.
+4. Dosyaları yükleyin ve Commit changes düğmesine basın.
+5. ZIP dosyasının kendisini yüklemeyin.
+
+Not: Aynı isimli eski dosyalar yeni sürümle değişecektir.
