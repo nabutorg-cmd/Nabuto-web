@@ -1,401 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NABUTO; neslin aslıyla buluştuğu uygulama ve tefekkür ortamları." />
   <title>NABUTO | Neslin Aslıyla Buluştuğu Ortamlar</title>
-  <meta name="description" content="NABUTO; çocukların, gençlerin ve ailelerin kendi kökleriyle yeniden bağ kurmasını amaçlayan sosyal, dijital ve fiziksel uygulama ve tefekkür ortamları geliştirir.">
-  <style>
-    :root {
-      --navy: #163650;
-      --navy-dark: #0d263a;
-      --turquoise: #159ca3;
-      --orange: #ef8544;
-      --coral: #e96f61;
-      --cream: #f7f4ed;
-      --white: #ffffff;
-      --text: #3f5261;
-      --line: rgba(22,54,80,.12);
-      --shadow: 0 24px 70px rgba(13,38,58,.12);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--navy);
-      background: var(--white);
-      line-height: 1.65;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
-    nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .logo {
-      font-size: 29px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-    .logo span { color: var(--orange); }
-    .nav-links { display: flex; gap: 24px; font-size: 14px; font-weight: 700; }
-    .nav-links a:hover { color: var(--turquoise); }
-
-    .hero {
-      min-height: 720px;
-      display: grid;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(21,156,163,.18), transparent 28%),
-        radial-gradient(circle at 8% 88%, rgba(239,133,68,.16), transparent 31%),
-        linear-gradient(135deg, #fff 0%, #f7fbfb 52%, #fff8f3 100%);
-    }
-    .hero::after {
-      content: "010101 101010 001101 110010 010101 101100";
-      position: absolute;
-      top: 80px;
-      right: -90px;
-      width: 500px;
-      color: rgba(21,156,163,.07);
-      font-size: 42px;
-      font-weight: 900;
-      line-height: 1.8;
-      transform: rotate(-12deg);
-      pointer-events: none;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: 70px;
-      padding: 95px 0;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 22px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: rgba(21,156,163,.1);
-      color: #0d7c82;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--orange);
-      border-radius: 50%;
-    }
-    h1 {
-      max-width: 760px;
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      letter-spacing: -2.7px;
-      margin-bottom: 26px;
-    }
-    h1 span { color: var(--turquoise); }
-    .hero p {
-      max-width: 690px;
-      font-size: clamp(18px, 2vw, 21px);
-      color: var(--text);
-      margin-bottom: 34px;
-    }
-    .buttons { display: flex; flex-wrap: wrap; gap: 14px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 14px;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-    .button-primary { color: white; background: var(--navy); box-shadow: 0 14px 30px rgba(22,54,80,.18); }
-    .button-secondary { color: var(--navy); border: 1px solid var(--line); background: rgba(255,255,255,.75); }
-    .button:hover { transform: translateY(-2px); }
-
-    .hero-card {
-      position: relative;
-      padding: 36px;
-      border-radius: 30px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(255,255,255,.95);
-      box-shadow: var(--shadow);
-    }
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -12px 18px 18px -12px;
-      z-index: -1;
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(239,133,68,.23), rgba(21,156,163,.24));
-    }
-    .hero-card .mark {
-      width: 64px;
-      height: 64px;
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      font-size: 32px;
-      background: var(--cream);
-      margin-bottom: 26px;
-    }
-    .hero-card h2 { font-size: 27px; line-height: 1.25; margin-bottom: 14px; }
-    .hero-card p { font-size: 16px; margin: 0; }
-    .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
-    .mini-card { padding: 17px; border-radius: 16px; background: #f5f9f9; font-size: 14px; font-weight: 800; }
-
-    section { padding: 96px 0; }
-    .section-head { max-width: 760px; margin-bottom: 45px; }
-    .section-label { color: var(--orange); font-size: 13px; font-weight: 900; letter-spacing: 1.8px; text-transform: uppercase; }
-    .section-head h2 { font-size: clamp(34px, 5vw, 52px); line-height: 1.14; margin: 12px 0 18px; letter-spacing: -1.4px; }
-    .section-head p { color: var(--text); font-size: 18px; }
-
-    .about { background: var(--cream); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-    .about-card {
-      padding: 34px;
-      border-radius: 24px;
-      background: white;
-      border: 1px solid rgba(22,54,80,.08);
-    }
-    .about-card h3 { font-size: 23px; margin-bottom: 12px; }
-    .about-card p { color: var(--text); }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .project-card {
-      min-height: 260px;
-      padding: 30px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: white;
-      transition: .2s ease;
-    }
-    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .project-icon {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: rgba(21,156,163,.1);
-      font-size: 25px;
-      margin-bottom: 26px;
-    }
-    .project-card:nth-child(2) .project-icon { background: rgba(239,133,68,.13); }
-    .project-card:nth-child(3) .project-icon { background: rgba(233,111,97,.12); }
-    .project-card h3 { font-size: 22px; margin-bottom: 10px; }
-    .project-card p { color: var(--text); font-size: 15px; }
-
-    .festival {
-      background: var(--navy-dark);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .festival::after {
-      content: "";
-      position: absolute;
-      width: 390px;
-      height: 390px;
-      border-radius: 50%;
-      right: -150px;
-      top: -160px;
-      background: rgba(21,156,163,.18);
-    }
-    .festival-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 70px; align-items: center; }
-    .festival h2 { font-size: clamp(39px, 6vw, 64px); line-height: 1.08; margin: 14px 0 22px; }
-    .festival p { color: rgba(255,255,255,.72); font-size: 18px; }
-    .festival-list { display: grid; gap: 14px; }
-    .festival-item {
-      padding: 18px 20px;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      font-weight: 750;
-    }
-
-    .contact { text-align: center; }
-    .contact-box {
-      padding: 54px 28px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #f4fbfb, #fff7f1);
-      border: 1px solid var(--line);
-    }
-    .contact-box h2 { font-size: clamp(34px, 5vw, 50px); margin-bottom: 15px; }
-    .contact-box p { max-width: 700px; margin: 0 auto 28px; color: var(--text); }
-
-    footer {
-      padding: 32px 0;
-      background: #0a2031;
-      color: rgba(255,255,255,.65);
-      font-size: 14px;
-    }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
-    .footer-logo { color: white; font-size: 19px; font-weight: 900; letter-spacing: 2px; }
-    .footer-logo span { color: var(--orange); }
-
-    @media (max-width: 820px) {
-      .nav-links { display: none; }
-      .hero { min-height: auto; }
-      .hero-grid, .festival-grid, .about-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 48px; padding: 72px 0; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .hero-card { padding: 28px; }
-      .festival-grid { gap: 42px; }
-      section { padding: 72px 0; }
-    }
-
-    @media (max-width: 520px) {
-      .container { width: min(100% - 28px, 1120px); }
-      nav { min-height: 68px; }
-      h1 { letter-spacing: -1.7px; }
-      .buttons { flex-direction: column; }
-      .button { width: 100%; }
-      .mini-grid { grid-template-columns: 1fr; }
-      .footer-row { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <nav class="container">
-      <a class="logo" href="#anasayfa">NABUT<span>O</span></a>
-      <div class="nav-links">
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#projeler">Projeler</a>
-        <a href="#nabutofest">NabutoFest</a>
-        <a href="#iletisim">İletişim</a>
-      </div>
-    </nav>
-  </header>
+<header class="site-header">
+  <a href="#anasayfa" class="brand"><img src="assets/nabuto-logo.png" alt="NABUTO logosu"></a>
+  <button class="menu-btn" aria-label="Menüyü aç">☰</button>
+  <nav class="nav">
+    <a href="#hakkimizda">NABUTO Nedir?</a>
+    <a href="#projeler">Projeler</a>
+    <a href="#fest">NabutoFest</a>
+    <a href="#isbirligi">İş Birliği</a>
+    <a href="#iletisim" class="nav-cta">İletişim</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="anasayfa">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Yeni internet sitemiz hazırlanıyor</div>
-          <h1>Neslin aslıyla buluştuğu <span>yeni bir gelecek.</span></h1>
-          <p>NABUTO; çocukların, gençlerin ve ailelerin kendi kökleriyle yeniden bağ kurmasını sağlayan sosyal, dijital ve fiziksel uygulama ve tefekkür ortamları geliştirir.</p>
-          <div class="buttons">
-            <a class="button button-primary" href="#projeler">Projelerimizi Keşfet</a>
-            <a class="button button-secondary" href="#iletisim">Bizimle İletişime Geç</a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="mark">🌿</div>
-          <h2>Geleneğin hikmeti, geleceğin imkânıyla buluşuyor.</h2>
-          <p>İnanç, aile, eğitim, kültür ve teknolojiyi aynı gelişim ekosisteminde bir araya getiriyoruz.</p>
-          <div class="mini-grid">
-            <div class="mini-card">Çocuk ve Aile</div>
-            <div class="mini-card">Kültür ve Değerler</div>
-            <div class="mini-card">Yeni Nesil Eğitim</div>
-            <div class="mini-card">Dijital Projeler</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="about" id="hakkimizda">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">NABUTO Nedir?</div>
-          <h2>Köklerinden güç alan, geleceğe yön veren dinamik bir hareket.</h2>
-          <p>Medeniyetimizin devamlılığına hizmet eden; çocuk, genç ve aileyi merkeze alan sürdürülebilir bir gelişim ekosistemi kuruyoruz.</p>
-        </div>
-        <div class="about-grid">
-          <article class="about-card">
-            <h3>Misyonumuz</h3>
-            <p>Nesillerin kendi değerleriyle güçlü bağ kurabileceği güvenli, nitelikli ve uygulanabilir eğitim ve gelişim ortamları oluşturmak.</p>
-          </article>
-          <article class="about-card">
-            <h3>Yaklaşımımız</h3>
-            <p>Sorunlar yerine çözümleri konuşan; geleneği korurken günümüzün imkânlarından yararlanan yenilikçi ve kapsayıcı modeller geliştirmek.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projeler">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Projelerimiz</div>
-          <h2>Fikirden sahaya uzanan uygulama ortamları.</h2>
-          <p>Her projemiz çocukların, gençlerin ve ailelerin birlikte öğrenmesini, üretmesini ve değerleriyle bağ kurmasını destekler.</p>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-icon">🎪</div>
-            <h3>NabutoFest</h3>
-            <p>Üç nesli ve farklı kültürleri namaz, eğitim, sanat, oyun ve paylaşım ekseninde buluşturan aile festivali.</p>
-          </article>
-          <article class="project-card">
-            <div class="project-icon">🧭</div>
-            <h3>NABUTO Kaşifi</h3>
-            <p>Çocukların şehirleri, tarihi ve medeniyet mirasını merak, keşif ve görevlerle tanıdığı deneyim temelli rehberlik modeli.</p>
-          </article>
-          <article class="project-card">
-            <div class="project-icon">🏕️</div>
-            <h3>Oba Okul</h3>
-            <p>Okul ve okul dışı öğrenmeyi bütünleştiren; doğa, değerler, beceri ve topluluk temelli yeni nesil eğitim modeli.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="festival" id="nabutofest">
-      <div class="container festival-grid">
-        <div>
-          <div class="section-label">NabutoFest</div>
-          <h2>Üç Nesil, Yetmiş İki Millet.</h2>
-          <p>Çocukların neşesini, gençlerin heyecanını, anne babaların emeğini ve büyüklerin duasını aynı meydanda buluşturuyoruz.</p>
-        </div>
-        <div class="festival-list">
-          <div class="festival-item">Helal eğlence ve geleneksel oyunlar</div>
-          <div class="festival-item">Bilim, teknoloji, sanat ve atölyeler</div>
-          <div class="festival-item">Aile, gençlik ve değer odaklı programlar</div>
-          <div class="festival-item">Namaz vakitleri etrafında şekillenen festival akışı</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="iletisim">
-      <div class="container">
-        <div class="contact-box">
-          <div class="section-label">İletişim</div>
-          <h2>NABUTO yolculuğuna katılın.</h2>
-          <p>Projelerimiz, gönüllülük, iş birliği ve sponsorluk görüşmeleri için yakında iletişim kanallarımızı burada paylaşacağız.</p>
-          <a class="button button-primary" href="mailto:iletisim@nabuto.org">iletisim@nabuto.org</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div class="footer-logo">NABUT<span>O</span></div>
-      <div>© 2026 NABUTO — Tüm hakları saklıdır.</div>
+<main>
+<section id="anasayfa" class="hero section">
+  <div class="hero-copy">
+    <p class="eyebrow">NESLİN ASLIYLA BULUŞTUĞU UYGULAMA VE TEFEKKÜR ORTAMLARI</p>
+    <h1>Geleneğin hikmeti,<br><span>geleceğin imkânıyla</span> buluşuyor.</h1>
+    <p class="lead">NABUTO; çocukların, gençlerin ve ailelerin kendi kökleriyle yeniden bağ kurmasını amaçlayan; sosyal, dijital ve fiziksel uygulama ve tefekkür ortamları ile medeniyetimizin bekasına hizmet eden dinamik bir harekettir.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projeler">Projeleri Keşfet</a>
+      <a class="btn ghost" href="#iletisim">Bizimle İletişime Geç</a>
     </div>
-  </footer>
+  </div>
+  <div class="hero-card">
+    <img src="assets/nabuto-logo.png" alt="NABUTO">
+    <blockquote>“Neden olmadı?” sorusuna takılıp kalmanın değil; “Nasıl olmalı?” sorusunun peşinden yürüyenlerin hikâyesi.</blockquote>
+  </div>
+</section>
+
+<section id="hakkimizda" class="section soft">
+  <div class="section-head">
+    <p class="eyebrow">NABUTO NEDİR?</p>
+    <h2>Köklerinden güç alan, geleceğe yön veren bir gelişim yolculuğu.</h2>
+  </div>
+  <div class="grid two">
+    <article class="card"><span class="icon">◎</span><h3>Misyon</h3><p>Çocukların, gençlerin ve ailelerin kendi kökleriyle yeniden bağ kurabilecekleri; düşünmeyi, üretmeyi ve uygulamayı merkeze alan sosyal, dijital ve fiziksel gelişim ortamları oluşturmak.</p></article>
+    <article class="card"><span class="icon">△</span><h3>Vizyon</h3><p>Geleneğin hikmetini geleceğin imkânlarıyla buluşturan; kendi köklerinden güç alan, çağın bilgi ve teknolojisini doğru kullanan, düşünen, üreten ve insanlığa değer katan nesillere öncülük etmek.</p></article>
+  </div>
+</section>
+
+<section id="projeler" class="section">
+  <div class="section-head">
+    <p class="eyebrow">GELİŞİM EKOSİSTEMİ</p>
+    <h2>Birbirini tamamlayan projeler, bütüncül bir gelişim ekosistemi.</h2>
+  </div>
+  <div class="grid three projects">
+    <article class="card"><span class="icon">☾</span><h3>Namaz Buluşmaları</h3><p>Cami merkezli buluşmalar ve eğitimlerle namazı hayatın doğal bir parçası hâline getiren programlar.</p></article>
+    <article class="card"><span class="icon">🏆</span><h3>Namaz Şampiyonası</h3><p>Ödüllü, eğlenceli ve motive edici etkinliklerle çocuklarda namaz alışkanlığını pekiştiren yarışmalar.</p></article>
+    <article class="card"><span class="icon">🧭</span><h3>Medeniyet Keşif Parkurları</h3><p>Tarihî ve manevî merkezleri keşif, oyun ve öğrenmeyle buluşturan aile deneyimleri.</p></article>
+    <article class="card"><span class="icon">🎪</span><h3>NabutoFest</h3><p>Üç nesli namaz, eğitim, kültür, sanat, spor ve helal eğlence etrafında buluşturan aile festivali.</p></article>
+    <article class="card"><span class="icon">🏕</span><h3>Nabuto İzcilik</h3><p>Dijital keşiften doğaya, kardeşliğe ve hizmete uzanan bütüncül izcilik yaklaşımı.</p></article>
+    <article class="card"><span class="icon">🌿</span><h3>Çocuk Köyü & Oba Okul</h3><p>Doğa, değer, üretim ve deneyim temelli yerli ve millî eğitim modelinin uygulama alanı.</p></article>
+  </div>
+</section>
+
+<section id="fest" class="section festival">
+  <div class="festival-copy">
+    <p class="eyebrow light">NABUTOFEST</p>
+    <h2>3 Nesil, 72 Millet;<br>Namazla Birleşen Bir Ümmet.</h2>
+    <p>NabutoFest; çocukları, gençleri, aileleri ve büyükleri namaz merkezli bir hayat anlayışı etrafında buluşturan; helal eğlence, kültür, eğitim, spor, sanat ve gönüllülüğü aynı çatı altında bir araya getiren büyük bir aile festivalidir.</p>
+    <a href="#isbirligi" class="btn light-btn">İş Birliği Yap</a>
+  </div>
+  <div class="stats">
+    <div><strong>3</strong><span>Nesil</span></div>
+    <div><strong>72</strong><span>Millet</span></div>
+    <div><strong>3</strong><span>Günlük Festival</span></div>
+    <div><strong>1</strong><span>Ortak Niyet</span></div>
+  </div>
+</section>
+
+<section id="isbirligi" class="section soft">
+  <div class="section-head">
+    <p class="eyebrow">BİRLİKTE DAHA BÜYÜK BİR ETKİ</p>
+    <h2>Biz reklam alanı satmıyoruz. Bir medeniyet tasavvuruna ortaklar arıyoruz.</h2>
+  </div>
+  <div class="grid three">
+    <article class="card"><span class="icon">◆</span><h3>Sponsorluk</h3><p>Marka görünürlüğünün ötesinde, çocuklara ve ailelere kalıcı değer sunan bir sosyal etki ortaklığı.</p></article>
+    <article class="card"><span class="icon">🤝</span><h3>STK Paydaşlığı</h3><p>Gönüllü insan kaynağı, atölye, eğitim, rehberlik, lojistik ve saha hizmetleriyle ortak değer üretimi.</p></article>
+    <article class="card"><span class="icon">🏛</span><h3>Kamu & Eğitim Kurumları</h3><p>Alan, ulaşım, teknik destek, eğitim stantları ve sosyal fayda odaklı programlarla güçlü iş birlikleri.</p></article>
+  </div>
+</section>
+
+<section id="iletisim" class="section contact">
+  <div>
+    <p class="eyebrow">İLETİŞİM</p>
+    <h2>NABUTO yolculuğuna katılın.</h2>
+    <p>Projeler, gönüllülük, kurumsal iş birliği ve sponsorluk görüşmeleri için bizimle iletişime geçin.</p>
+  </div>
+  <div class="contact-box">
+    <a href="mailto:info@nabuto.org">info@nabuto.org</a>
+    <a href="mailto:nabutorg@gmail.com">nabutorg@gmail.com</a>
+    <a href="tel:+905326542022">0532 654 20 22</a>
+    <a href="https://instagram.com/nabuto.official" target="_blank" rel="noreferrer">@nabuto.official</a>
+    <a href="https://www.nabuto.org">www.nabuto.org</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/nabuto-logo.png" alt="NABUTO">
+  <p>© 2026 NABUTO Derneği. Tüm hakları saklıdır.</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
