@@ -1,5 +1,23 @@
-NABUTO PLATFORM V4.2
+NABUTO PLATFORM V5.0
 
-Yeni sayfalar: Galeri, Medeniyet Keşif Parkurları, Gönüllü Ol, Sponsor Ol.
+BU SÜRÜMÜN ODAĞI: NABUTOFEST
 
-ÖNEMLİ: Hiçbir dosyayı silme. ZIP içeriğini mevcut dosyaların üzerine yükle ve Commit changes de. Formlar şu an arayüz olarak hazırdır; güvenli gönderim sonraki aşamada kurulacaktır.
+Yeni NabutoFest sayfasında:
+- 4-5-6 Eylül 2026 / Bursa / Kocayayla tarih ve konum alanı
+- Güçlü festival giriş bölümü
+- Gönüllü, sponsor ve program yönlendirmeleri
+- Sayılarla festival bölümü
+- Festival vizyonu
+- Namazgâh, çocuk, gençlik, sohbet, panayır ve sahne alanları
+- 3 günlük ana program akışı
+- Kurumsal iş birliği çağrısı
+- Sık sorulan sorular
+- Mobil uyumlu tasarım
+
+yükleme:
+1. ZIP dosyasını ayıkla.
+2. İçindeki tüm dosya ve klasörleri GitHub'daki Nabuto-web deposuna yükle.
+3. Hiçbir mevcut dosyayı tek tek silme.
+4. Aynı isimli dosyaların üzerine yazılmasına izin ver.
+5. Commit changes düğmesine bas.
+6. Vercel otomatik olarak yayınlayacaktır.
