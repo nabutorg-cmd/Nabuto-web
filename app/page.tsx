@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImpactStrip from "@/components/ImpactStrip";
 
 const projects = [
   ["NabutoFest", "Helal eğlence, maneviyat, kültür ve aileyi aynı meydanda buluşturan festival.", "/nabutofest", "01"],
@@ -38,6 +39,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ImpactStrip />
 
       <section className="bg-white py-28">
         <div className="container-page grid gap-16 lg:grid-cols-2">
@@ -91,6 +94,29 @@ export default function Home() {
             <span className="font-black text-[#ef4e55]">Biz reklam alanı satmıyoruz.</span>
             <p className="mt-4 text-3xl font-black leading-tight">Bir medeniyet tasavvurunun yeniden ihyasına ortaklar arıyoruz.</p>
             <Link href="/is-birligi" className="mt-8 inline-block rounded-full bg-white px-6 py-4 font-bold">İş birliği yap</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-28">
+        <div className="container-page grid gap-8 lg:grid-cols-[1.15fr_.85fr]">
+          <div className="rounded-[36px] bg-[#082f63] p-10 text-white md:p-14">
+            <span className="text-xs font-black uppercase tracking-[.18em] text-white/55">Dijital platform</span>
+            <h2 className="display mt-6 text-5xl font-black md:text-7xl">Keşif, öğrenme ve katılım tek çatı altında.</h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">Medeniyet Keşif Parkurları, etkinlikler, rozetler ve aile deneyimleri için büyüyen dijital altyapı.</p>
+            <Link href="/projeler" className="mt-8 inline-block rounded-full bg-white px-6 py-4 font-bold text-[#082f63]">Platformu keşfet</Link>
+          </div>
+          <div className="grid gap-5">
+            <Link href="/haberler" className="card-hover rounded-[30px] border border-[#082f6312] bg-[#f6f3ec] p-8">
+              <span className="text-xs font-black uppercase tracking-[.16em] text-[#ef4e55]">Güncel</span>
+              <h3 className="mt-10 text-3xl font-black text-[#082f63]">NABUTO’dan gelişmeler</h3>
+              <p className="mt-4 text-[#65758a]">Projeler, etkinlikler ve kurumsal çalışmalarla ilgili haberler.</p>
+            </Link>
+            <Link href="/etkinlikler" className="card-hover rounded-[30px] border border-[#082f6312] bg-[#f6f3ec] p-8">
+              <span className="text-xs font-black uppercase tracking-[.16em] text-[#08a9ae]">Takvim</span>
+              <h3 className="mt-10 text-3xl font-black text-[#082f63]">Etkinliklere katılın</h3>
+              <p className="mt-4 text-[#65758a]">Yaklaşan buluşmalar, festival programları ve kayıt bilgileri.</p>
+            </Link>
           </div>
         </div>
       </section>

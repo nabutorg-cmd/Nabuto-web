@@ -9,6 +9,7 @@ const links = [
   ["Projeler", "/projeler"],
   ["NabutoFest", "/nabutofest"],
   ["İş Birliği", "/is-birligi"],
+  ["Haberler", "/haberler"],
 ];
 
 export default function Header() {
