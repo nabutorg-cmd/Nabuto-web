@@ -9,6 +9,7 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} NABUTO. Tüm hakları saklıdır.</p>
         <div className="flex gap-5">
           <Link href="/haberler">Haberler</Link>
+          <Link href="/galeri">Galeri</Link>
           <Link href="/etkinlikler">Etkinlikler</Link>
           <Link href="/iletisim">İletişim</Link>
           <a href="https://www.instagram.com/nabuto.official" target="_blank" rel="noreferrer">@nabuto.official</a>

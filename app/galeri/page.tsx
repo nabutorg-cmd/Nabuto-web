@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
+export const metadata: Metadata={title:"Galeri"};
+const cards=["NabutoFest","Keşif Parkurları","NABUTO Buluşmaları","Atölyeler","İzcilik","Oba Okul"];
+export default function Page(){return <><PageHero eyebrow="Galeri" title="NABUTO’nun yaşayan hafızası." text="Etkinlikler, projeler ve saha çalışmalarından seçilen görseller bu alanda yayımlanacak."/><section className="bg-[#f6f3ec] py-24"><div className="container-page grid gap-5 md:grid-cols-2 lg:grid-cols-3">{cards.map((x,i)=><article key={x} className="overflow-hidden rounded-[30px] bg-white"><div className="grid h-56 place-items-center bg-gradient-to-br from-[#082f63] via-[#0a4f78] to-[#08a9ae]"><span className="text-6xl font-black text-white/20">0{i+1}</span></div><div className="p-7"><h2 className="text-2xl font-black text-[#082f63]">{x}</h2></div></article>)}</div></section></>}

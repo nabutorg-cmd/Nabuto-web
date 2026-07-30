@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
+import ApplicationForm from "@/components/ApplicationForm";
+export const metadata: Metadata={title:"Sponsor ol"};
+export default function Page(){return <><PageHero eyebrow="Sponsor ol" title="Bir medeniyet tasavvuruna ortak ol." text="Kurumsal gücünüzü sürdürülebilir toplumsal faydaya dönüştürelim."/><section className="bg-[#f6f3ec] py-24"><div className="container-page grid gap-10 lg:grid-cols-[.75fr_1.25fr]"><div><span className="text-xs font-black uppercase tracking-[.18em] text-[#08a9ae]">Başvuru</span><h2 className="display mt-5 text-4xl font-black text-[#082f63] md:text-6xl">İlk adımı birlikte atalım.</h2><p className="mt-6 text-[#65758a]">Formun güvenli veri gönderimi sonraki teknik aşamada etkinleştirilecektir.</p></div><ApplicationForm type="sponsor"/></div></section></>}

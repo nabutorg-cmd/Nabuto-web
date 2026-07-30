@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
+export const metadata: Metadata={title:"Medeniyet Keşif Parkurları"};
+const steps=[["Rotanı seç","Şehrindeki parkurları keşfet."],["Görevleri tamamla","QR görevleri ve aile etkinlikleriyle ilerle."],["Rozetini kazan","Parkuru tamamla ve dijital rozetlerini biriktir."]];
+export default function Page(){return <><PageHero eyebrow="Medeniyet Keşif Parkurları" title="Şehri gezerken köklerini keşfet." text="Ailece, 7’den 70’e deneyimlenen interaktif keşif rotaları."/><section className="bg-white py-24"><div className="container-page grid gap-5 md:grid-cols-3">{steps.map(([t,d],i)=><article key={t} className="rounded-[30px] border border-[#082f6312] p-8"><span className="text-xs font-black text-[#ef4e55]">0{i+1}</span><h2 className="mt-14 text-3xl font-black text-[#082f63]">{t}</h2><p className="mt-4 text-[#65758a]">{d}</p></article>)}</div></section><section className="dark-gradient py-24 text-white"><div className="container-page"><h2 className="display text-5xl font-black md:text-7xl">“Eğitim dört duvar arasından çıkınca başlar.”</h2></div></section></>}
