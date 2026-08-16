@@ -24,7 +24,7 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link href="/projeler" className="rounded-full bg-[#082f63] px-7 py-4 font-bold text-white shadow-xl">Projeleri keşfet</Link>
-              <Link href="/nabutofest" className="rounded-full border border-[#082f6320] bg-white/60 px-7 py-4 font-bold text-[#082f63]">NabutoFest</Link>
+              <Link href="/nabutofest" className="rounded-full border border-[#082f6320] bg-white/60 px-7 py-4 font-bold text-[#082f63]">NabutoFest</Link><a href="https://docs.google.com/forms/d/e/1FAIpQLScWr4iafQPIUoYTxiDt0gsq-X1Hxc32U51ngkmx9gxWfcTsAg/viewform" target="_blank" rel="noreferrer" className="rounded-full bg-[#ef4e55] px-7 py-4 font-black text-white shadow-xl">Katılımcı Başvuru</a>
             </div>
           </div>
           <div className="reveal delay-1 relative min-h-[480px]">
@@ -41,6 +41,47 @@ export default function Home() {
       </section>
 
       <ImpactStrip />
+
+      <section className="bg-white py-24">
+        <div className="container-page grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr]">
+          <div className="overflow-hidden rounded-[36px] border border-[#082f6312] bg-[#f6f3ec] soft-shadow">
+            <Image
+              src="/nabutofest-afis.jpg"
+              alt="NABUTOFEST 2026 festival afişi"
+              width={1100}
+              height={1375}
+              className="h-auto w-full"
+            />
+          </div>
+          <div>
+            <span className="text-xs font-black uppercase tracking-[.18em] text-[#ef4e55]">NABUTOFEST 2026</span>
+            <h2 className="display mt-5 text-5xl font-black text-[#082f63] md:text-7xl">
+              4 • 5 • 6 Eylül<br />Kocayayla / Bursa
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#65758a]">
+              Türkiye’de ilk defa program akışı namaz vakitlerine göre planlanan
+              helal eğlence ve aile festivalinde üç nesil aynı değerler etrafında buluşuyor.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScWr4iafQPIUoYTxiDt0gsq-X1Hxc32U51ngkmx9gxWfcTsAg/viewform" target="_blank" rel="noreferrer"
+                 className="rounded-full bg-[#ef4e55] px-7 py-4 font-black text-white shadow-xl">
+                Katılımcı Ön Başvuru
+              </a>
+              <Link href="/nabutofest"
+                    className="rounded-full border border-[#082f6320] bg-white px-7 py-4 font-bold text-[#082f63]">
+                Festival Detayları
+              </Link>
+            </div>
+            <div className="mt-7 rounded-[24px] border border-[#08a9ae20] bg-[#08a9ae0d] p-6">
+              <strong className="block text-[#082f63]">Aile veya bireysel katılım mümkün.</strong>
+              <span className="mt-2 block text-sm leading-6 text-[#65758a]">
+                Bu form ön başvuru niteliğindedir; kesin rezervasyon veya ödeme yükümlülüğü oluşturmaz.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section className="bg-white py-28">
         <div className="container-page grid gap-16 lg:grid-cols-2">
