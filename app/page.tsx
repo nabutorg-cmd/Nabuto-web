@@ -40,6 +40,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#082f63] py-8 text-white">
+        <div className="container-page grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="/nabutofest" className="rounded-[22px] border border-white/15 bg-white/5 p-5 transition hover:bg-white/10">
+            <span className="text-xs font-black uppercase tracking-[.16em] text-white/50">01</span>
+            <strong className="mt-2 block text-xl">Festival</strong>
+          </a>
+          <a href="/gonullu-ol" className="rounded-[22px] border border-white/15 bg-white/5 p-5 transition hover:bg-white/10">
+            <span className="text-xs font-black uppercase tracking-[.16em] text-white/50">02</span>
+            <strong className="mt-2 block text-xl">Gönüllü Ol</strong>
+          </a>
+          <a href="/is-birligi" className="rounded-[22px] border border-white/15 bg-white/5 p-5 transition hover:bg-white/10">
+            <span className="text-xs font-black uppercase tracking-[.16em] text-white/50">03</span>
+            <strong className="mt-2 block text-xl">İş Birliği</strong>
+          </a>
+          <a href="/projeler" className="rounded-[22px] border border-white/15 bg-white/5 p-5 transition hover:bg-white/10">
+            <span className="text-xs font-black uppercase tracking-[.16em] text-white/50">04</span>
+            <strong className="mt-2 block text-xl">Projeler</strong>
+          </a>
+        </div>
+      </section>
+
+
       <ImpactStrip />
 
       <section className="bg-white py-24">
@@ -209,6 +231,61 @@ export default function Home() {
               <h3 className="mt-10 text-3xl font-black text-[#082f63]">Etkinliklere katılın</h3>
               <p className="mt-4 text-[#65758a]">Yaklaşan buluşmalar, festival programları ve kayıt bilgileri.</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="bg-white py-24">
+        <div className="container-page grid items-start gap-10 lg:grid-cols-[1fr_.9fr]">
+          <div>
+            <span className="text-xs font-black uppercase tracking-[.18em] text-[#ef4e55]">
+              Katılımcılar için
+            </span>
+            <h2 className="display mt-5 text-5xl font-black text-[#082f63] md:text-7xl">
+              Ön başvurular başladı.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#65758a]">
+              4 • 5 • 6 Eylül 2026 tarihlerinde Kocayayla / Bursa’da gerçekleşecek
+              NABUTOFEST için aile ve bireysel katılımcı ön başvuruları açıktır.
+            </p>
+
+            <div className="mt-8 grid gap-4">
+              <div className="rounded-[24px] border border-[#082f6312] bg-[#f6f3ec] p-6">
+                <strong className="block text-[#082f63]">Bu başvuru ön kayıt niteliğindedir.</strong>
+                <span className="mt-2 block text-sm leading-6 text-[#65758a]">
+                  Kesin rezervasyon veya ödeme yükümlülüğü oluşturmaz.
+                </span>
+              </div>
+              <div className="rounded-[24px] border border-[#08a9ae20] bg-[#08a9ae0d] p-6">
+                <strong className="block text-[#082f63]">Üç günlük büyük bir aile buluşması.</strong>
+                <span className="mt-2 block text-sm leading-6 text-[#65758a]">
+                  Çocuklar eğlenirken kendi medeniyetleriyle bağ kuracak; üç nesil aynı sofrada,
+                  aynı meydanda ve aynı duada buluşacak.
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScWr4iafQPIUoYTxiDt0gsq-X1Hxc32U51ngkmx9gxWfcTsAg/viewform" target="_blank" rel="noreferrer"
+                 className="rounded-full bg-[#ef4e55] px-7 py-4 font-black text-white shadow-xl">
+                Katılımcı Ön Başvuru
+              </a>
+              <a href="https://whatsapp.com/channel/0029VbDPOjXJf05fnKMEbF2m" target="_blank" rel="noreferrer"
+                 className="rounded-full bg-[#1f8f5f] px-7 py-4 font-black text-white">
+                WhatsApp Duyuru Kanalı
+              </a>
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-[30px] border border-[#082f6312] bg-[#f6f3ec] soft-shadow">
+            <Image
+              src="/katilimci-bilgilendirme.jpg"
+              alt="NABUTOFEST katılımcı ön başvuru bilgilendirmesi"
+              width={1024}
+              height={537}
+              className="h-auto w-full object-cover"
+            />
           </div>
         </div>
       </section>
