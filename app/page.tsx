@@ -82,6 +82,57 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#f6f3ec] py-24">
+        <div className="container-page">
+          <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <span className="text-xs font-black uppercase tracking-[.18em] text-[#08a9ae]">NABUTOFEST 2026</span>
+              <h2 className="display mt-5 max-w-4xl text-5xl font-black text-[#082f63] md:text-7xl">
+                Festival daha siteye girer girmez hissedilsin.
+              </h2>
+            </div>
+            <p className="max-w-md text-[#65758a]">
+              4 • 5 • 6 Eylül 2026 — Kocayayla / Bursa
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-[1.3fr_.7fr]">
+            <a href="/nabutofest" className="group overflow-hidden rounded-[34px] bg-white soft-shadow">
+              <Image
+                src="/nabutofest-ana-afis.jpg"
+                alt="NABUTOFEST 2026 ana festival afişi"
+                width={1100}
+                height={1375}
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              />
+            </a>
+
+            <div className="grid gap-6">
+              <a href="/gonullu-ol" className="group overflow-hidden rounded-[30px] bg-white soft-shadow">
+                <Image
+                  src="/nabutofest-gonullu.jpg"
+                  alt="NABUTOFEST gönüllü çağrı afişi"
+                  width={1100}
+                  height={1375}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                />
+              </a>
+
+              <a href="/is-birligi" className="group overflow-hidden rounded-[30px] bg-white soft-shadow">
+                <Image
+                  src="/nabutofest-destek.jpg"
+                  alt="NABUTOFEST bağış ve destek afişi"
+                  width={1100}
+                  height={1375}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
       <section className="bg-white py-28">
         <div className="container-page grid gap-16 lg:grid-cols-2">
@@ -161,6 +212,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-4 z-40 px-4">
+        <div className="mx-auto flex max-w-xl items-center justify-between gap-4 rounded-full border border-white/70 bg-[#082f63]/95 px-5 py-3 text-white shadow-2xl backdrop-blur">
+          <div className="min-w-0">
+            <strong className="block truncate text-sm">NABUTOFEST 2026</strong>
+            <span className="block truncate text-xs text-white/70">Katılımcı ön başvuruları açık</span>
+          </div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScWr4iafQPIUoYTxiDt0gsq-X1Hxc32U51ngkmx9gxWfcTsAg/viewform"
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full bg-[#ef4e55] px-5 py-3 text-sm font-black text-white"
+          >
+            Başvur
+          </a>
+        </div>
+      </div>
+
     </>
   );
 }
